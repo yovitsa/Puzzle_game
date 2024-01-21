@@ -1,0 +1,23 @@
+COPY AND PASTE THE FUNCTION BELOW INTO YOUR EXISTING api/index.js
+Make sure to stop and restart your local server before testing against this endpoint
+
+app.get('/tiles', (req, res) => {
+  const chosen = []
+  const files = []
+
+  while (chosen.length < 8) {
+      const choice = Math.floor(Math.random() * 8) + 1
+      if (!chosen.includes(choice)) {
+          chosen.push(choice)
+      }
+  }
+
+  for (let choice of chosen) {
+    files.push({
+      piece: choice,
+      url: `chucky${choice}.png`
+    })
+  }
+
+  res.send(files)
+})

@@ -1,0 +1,44 @@
+html {
+    height: 100%;
+}
+body {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+    font-family: sans-serif;
+}
+#puzzle {
+    height: 600px;
+    width: 600px;
+    background-color: red;
+}
+#puzzle .piece {
+    vertical-align: top;
+    position: relative;
+    height: 200px;
+    width: 200px;
+    box-sizing: border-box;
+}
+.piece:not(.blank).selected {
+    opacity: 0.5;
+}
+#info {
+    padding: 20px 0;
+}
+#replay {
+    display: none;
+}
+#replay.visible {
+    display: block;
+}
+#buttons {
+    display: flex;
+}
+button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0px 10px;
+}
